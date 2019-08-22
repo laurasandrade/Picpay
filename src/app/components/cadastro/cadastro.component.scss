@@ -1,0 +1,49 @@
+.container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  width: 409px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-bottom: 1px solid #cecece;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.form-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+button {
+  background-color: #7ce5c5;
+  color: #474971;
+  border: 0;
+  border-radius: 20px;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+}

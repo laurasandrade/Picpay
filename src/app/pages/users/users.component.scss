@@ -1,0 +1,99 @@
+img {
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.bg {
+  background-image: linear-gradient(#2e2f49, #20212f);
+}
+
+p {
+  color: #fff;
+}
+.modal-content {
+  border: 0;
+  height: 500px;
+}
+.modal-header {
+  background-color: #474971;
+  color: #fff;
+}
+.modal-header strong {
+  color: #7ce5c5;
+}
+.modal-body {
+  color: #474971;
+  overflow-y: auto;
+}
+.modal-body p {
+  color: #474971;
+}
+.modal-header .close {
+  color: #fff;
+}
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+
+.container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  width: 409px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-bottom: 1px solid #cecece;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.form-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// button {
+//   background-color: #7ce5c5;
+//   color: #474971;
+//   border: 0;
+//   border-radius: 20px;
+//   width: 100%;
+//   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+//   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+//   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+// }
+
+
+.fa-dollar-sign{
+  background-color: #7ce5c5;
+  padding: 10px;
+  border-radius: 30px;
+}
