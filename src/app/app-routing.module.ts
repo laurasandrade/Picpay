@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { UsersComponent } from './pages/users/users.component';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: UsersComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'cadastro', component: CadastroComponent },
-
-
+  {path: 'users', component: UsersComponent }
 ];
 
 
@@ -22,4 +18,5 @@ const routes: Routes = [
   declarations: [],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

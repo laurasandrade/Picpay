@@ -10,11 +10,10 @@ import { ConfigService } from 'src/app/services/config.services';
 export class UsersComponent implements OnInit {
   profiles: [];
   showModal: boolean;
-  card_number: number;
-  cvv: number;
-  value: number;
-  expiry_date: string;
-  destination_user_id: number;
+  profileNameModal: string;
+  profileIDModal: string;
+
+  private isVisible = false;
 
   constructor(private configService: ConfigService) { }
 
@@ -24,15 +23,20 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  eventClick(model: any) {
+  appear(visible) {
+    this.isVisible = !(visible !== false);
+  }
+  eventClick(profileName: any, profileId: any) {
     this.showModal = true;
+    this.profileNameModal = profileName;
+    this.profileIDModal = profileId;
+
   }
   hide() {
     this.showModal = false;
   }
 
-  // onSubmit() {
-  //   this.http.post('http://careers.picpay.com/tests/mobdev/transaction', JSON.stringify(this.data))
-  //       .subscribe(...);
-  // }
+
+
+
 }

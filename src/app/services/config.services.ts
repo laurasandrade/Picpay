@@ -13,30 +13,26 @@ interface StoredRequest {
   providedIn: 'root'
 })
 export class ConfigService {
-  rows = {};
 
   constructor(private http: HttpClient) { }
+  rows = {};
+
+
+  // const req = this.http.post('http://careers.picpay.com/tests/mobdev/transaction', {
+  //   userId: 1,
+  //   card_number: '1111111111111111'
+  // })
+  //   .subscribe(
+  //     res => {
+  //       console.log(res);
+  //     },
+  //     err => {
+  //       console.log('Erro');
+  //     }
+  //   );
 
   getAll(): any {
     const url = `${environment.api.get}`;
     return this.http.get(url);
   }
-
-
-  // makeRequest(action: StoredRequest) {
-  //   let options = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //     })
-  //   };
-  //   return this.http.post(`${environment.api.post}`, action.data, options);
-  // }
-
-  // sendDevice(): any {
-  //   return this.http.post(`${environment.api.post}`, action.data, options,
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //     })
-  //   });
-  // }
 }

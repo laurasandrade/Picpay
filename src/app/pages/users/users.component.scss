@@ -1,10 +1,16 @@
-img {
-  border-radius: 50px;
-  margin-right: 10px;
+.circulo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin: -6px 15px;
+  transition: 0.3s ease;
+  border: 2px solid #fff;
 }
 
 .bg {
-  background-image: linear-gradient(#2e2f49, #20212f);
+  background-image: linear-gradient(#333452, #252639);
 }
 
 p {
@@ -17,9 +23,13 @@ p {
 .modal-header {
   background-color: #474971;
   color: #fff;
+  padding: 0.6em;
 }
 .modal-header strong {
   color: #7ce5c5;
+}
+.modal-header .close {
+  color: #fff;
 }
 .modal-body {
   color: #474971;
@@ -28,8 +38,15 @@ p {
 .modal-body p {
   color: #474971;
 }
+.modal-title {
+  font-size: 14px;
+}
 .modal-header .close {
-  color: #fff;
+  padding: 0.5em;
+  margin: -1rem -1rem -1rem auto;
+}
+.modal-footer {
+  border-top: 0;
 }
 input.example-right-align::-webkit-outer-spin-button,
 input.example-right-align::-webkit-inner-spin-button {
@@ -39,7 +56,6 @@ input.example-right-align::-webkit-inner-spin-button {
 input.example-right-align {
   -moz-appearance: textfield;
 }
-
 
 .container {
   background: #fff;
@@ -79,21 +95,63 @@ input {
   position: absolute;
   width: 1px;
 }
-
-// button {
-//   background-color: #7ce5c5;
-//   color: #474971;
-//   border: 0;
-//   border-radius: 20px;
-//   width: 100%;
-//   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
-//   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
-//   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
-// }
-
-
-.fa-dollar-sign{
+.go {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 9px 10px;
+}
+.btn-modal {
   background-color: #7ce5c5;
-  padding: 10px;
+  color: #474971;
+  border: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+}
+.fa-credit-card {
+  margin: 20px;
+}
+.fa-dollar-sign {
+  background-color: #7ce5c5;
+  padding: 8px 10px;
   border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.fa-exclamation-circle {
+  color: #ef5778;
+  padding-right: 5px;
+}
+.not-card {
+  color: #ef5778;
+}
+p > a {
+  color: #ef5778;
+  text-decoration: underline;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  height: 0px;
+}
+.subtitle {
+  font-size: 17px;
+}
+.num-cartoes li {
+  list-style: none;
 }
