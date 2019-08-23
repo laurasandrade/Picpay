@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
   profileNameModal: string;
   profileIDModal: string;
 
-  private isVisible = false;
+  public isVisible: boolean = true;
 
   constructor(private configService: ConfigService) { }
 
@@ -23,9 +23,14 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  appear(visible) {
-    this.isVisible = !(visible !== false);
+  onTap() {
+      if (this.isVisible) {
+          this.isVisible = false;
+      } else  {
+          this.isVisible = true;
+      }
   }
+
   eventClick(profileName: any, profileId: any) {
     this.showModal = true;
     this.profileNameModal = profileName;

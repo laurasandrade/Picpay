@@ -17,147 +17,154 @@
     <div class="modal-content">
 
       <!-- tela 1 -->
-      <div class="modal-header" id="tela1">
-        <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
-        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="../../assets/profile.jpg" alt="profile" class="circulo">
-        <p class="media-body pb-3 mb-0 small lh-125 border-gray">
-          <strong class="d-block text-gray-dark">{{profileNameModal}}</strong>
-          {{profileIDModal}}
-        </p>
-
-        <mat-form-field>
-          <input matInput placeholder="R$ 0,00" type="number" class="example-right-align">
-        </mat-form-field>
-        <hr>
-        <p>
-          <i class="fas fa-exclamation-circle"></i>
-          <span class="not-card">Nenhum cartão de crédito cadastrado.</span>
-          <br>
-          <a [routerLink]="['cadastro']" class="font-weight-bold">Cadastrar agora.</a>
-
-        </p>
-        <div class="modal-footer">
-          <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal" (click)="hide()">PAGAR</button>
+      <div *ngIf="isVisible">
+        <div class="modal-header" id="tela1">
+          <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
+          <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
         </div>
-      </div>
-
-      <!-- tela 2 -->
-      <div class="modal-header" id="tela2" *ngIf="isVisible">
-        <h2 class="modal-title">Cadastro Cartão de Crédito</h2>
-        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <div class="container">
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Nome escrito no cartão" value="">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Número do cartão" value="">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Validade (mm/aaaa)" value="">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Código de segurança" value="">
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="CEP do endereço da fatura" value="">
-            </mat-form-field>
-          </form>
-          <div class="modal-footer">
-            <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
-              (click)="hide()">CADASTRAR</button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- tela 3 -->
-      <div class="modal-header" id="tela3" *ngIf="isVisible">
-        <h2 class="modal-title">Cadastro Cartão de Crédito</h2>
-        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <div class="container">
-          <form (ngSubmit)="cadastro(myform)" class="form">
-            <h1 class="subtitle p-3">Cartões cadastrados</h1>
-            <ul class="num-cartoes">
-              <li> <i class="fas fa-credit-card"></i>1111 1111 1111 1111</li>
-              <li> <i class="fas fa-credit-card"></i>5678 3254 6754 8765</li>
-              <li> <i class="fas fa-credit-card"></i>1938 2312 5676 8731</li>
-              <li> <i class="fas fa-credit-card"></i>9865 1265 7898 4323</li>
-            </ul>
-            <hr>
-            <a href="#">+ Cadastrar novo cartão</a>
-            <div class="modal-footer">
-              <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
-                (click)="hide()">SELECIONAR</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-
-      <!-- tela 4 -->
-      <div class="modal-header" id="tela4" *ngIf="isVisible">
-        <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
-        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <img src="../../assets/profile.jpg" alt="profile" class="circulo">
-        <p class="media-body pb-3 mb-0 small lh-125 border-gray">
-          <strong class="d-block text-gray-dark">{{profileNameModal}}</strong>
-          {{profileIDModal}}
-        </p>
-
-        <mat-form-field>
-          <input matInput placeholder="R$ 0,00" type="number" class="example-right-align">
-        </mat-form-field>
-        <hr>
-        <p>
-          <i class="fas fa-credit-card"></i>Forma de pagamento:
-          cartão de crédito com final 111
-        </p>
-        <div class="modal-footer">
-          <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal" (click)="hide()">PAGAR</button>
-        </div>
-      </div>
-
-      <!-- tela 5 -->
-      <div class="modal-header" id="tela5" *ngIf="isVisible">
-        <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
-        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
-      </div>
-      <div class="modal-body text-center">
-        <div class="modal-body">
-          <img src="../../assets/profile.jpg" alt="profile" height="42" width="42">
+        <div class="modal-body text-center">
+          <img src="../../assets/profile.jpg" alt="profile" class="circulo">
           <p class="media-body pb-3 mb-0 small lh-125 border-gray">
             <strong class="d-block text-gray-dark">{{profileNameModal}}</strong>
             {{profileIDModal}}
           </p>
+
+          <mat-form-field>
+            <input matInput placeholder="R$ 0,00" type="number" class="example-right-align">
+          </mat-form-field>
           <hr>
-          <p>Pagamento confirmado! </p>
-          <ul>
-            <li>Transação</li>
-            <li>Data</li>
-            <li>Cartão</li>
-            <li>Valor</li>
-          </ul>
+          <p>
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="not-card">Nenhum cartão de crédito cadastrado.</span>
+            <br>
+            <a [routerLink]="['cadastro']" class="font-weight-bold">Cadastrar agora.</a>
+
+          </p>
           <div class="modal-footer">
-            <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal" (click)="hide()">PAGAR
-              NOVAMENTE</button>
+            <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
+              (click)="hide()">PAGAR</button>
           </div>
         </div>
       </div>
+      <!-- tela 2 -->
+      <div *ngIf="isVisible">
+        <div class="modal-header" id="tela2">
+          <h2 class="modal-title">Cadastro Cartão de Crédito</h2>
+          <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="container">
+            <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nome escrito no cartão" value="">
+              </mat-form-field>
 
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Número do cartão" value="">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Validade (mm/aaaa)" value="">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Código de segurança" value="">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="CEP do endereço da fatura" value="">
+              </mat-form-field>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
+                (click)="hide()">CADASTRAR</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- tela 3 -->
+      <div *ngIf="isVisible">
+        <div class="modal-header" id="tela3">
+          <h2 class="modal-title">Cadastro Cartão de Crédito</h2>
+          <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="container">
+            <form (ngSubmit)="cadastro(myform)" class="form">
+              <h1 class="subtitle p-3">Cartões cadastrados</h1>
+              <ul class="num-cartoes">
+                <li> <i class="fas fa-credit-card"></i>1111 1111 1111 1111</li>
+                <li> <i class="fas fa-credit-card"></i>5678 3254 6754 8765</li>
+                <li> <i class="fas fa-credit-card"></i>1938 2312 5676 8731</li>
+                <li> <i class="fas fa-credit-card"></i>9865 1265 7898 4323</li>
+              </ul>
+              <hr>
+              <a href="#">+ Cadastrar novo cartão</a>
+              <div class="modal-footer">
+                <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
+                  (click)="hide()">SELECIONAR</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- tela 4 -->
+      <div *ngIf="isVisible">
+        <div class="modal-header" id="tela4">
+          <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
+          <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="../../assets/profile.jpg" alt="profile" class="circulo">
+          <p class="media-body pb-3 mb-0 small lh-125 border-gray">
+            <strong class="d-block text-gray-dark">{{profileNameModal}}</strong>
+            {{profileIDModal}}
+          </p>
+
+          <mat-form-field>
+            <input matInput placeholder="R$ 0,00" type="number" class="example-right-align">
+          </mat-form-field>
+          <hr>
+          <p>
+            <i class="fas fa-credit-card"></i>Forma de pagamento:
+            cartão de crédito com final 111
+          </p>
+          <div class="modal-footer">
+            <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal"
+              (click)="hide()">PAGAR</button>
+          </div>
+        </div>
+      </div>
+      <!-- tela 5 -->
+      <div *ngIf="isVisible">
+        <div class="modal-header" id="tela5">
+          <h2 class="modal-title">Pagamento para <strong>{{profileNameModal}}</strong></h2>
+          <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="modal-body">
+            <img src="../../assets/profile.jpg" alt="profile" height="42" width="42">
+            <p class="media-body pb-3 mb-0 small lh-125 border-gray">
+              <strong class="d-block text-gray-dark">{{profileNameModal}}</strong>
+              {{profileIDModal}}
+            </p>
+            <hr>
+            <p>Pagamento confirmado! </p>
+            <ul>
+              <li>Transação</li>
+              <li>Data</li>
+              <li>Cartão</li>
+              <li>Valor</li>
+            </ul>
+            <div class="modal-footer">
+              <button type="button" class="btn-modal font-weight-bold" data-dismiss="modal" (click)="hide()">PAGAR
+                NOVAMENTE</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
